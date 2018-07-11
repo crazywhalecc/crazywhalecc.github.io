@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>WTask教程</title>
+    <!-- docute 的 CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/docute/dist/docute.css">
+</head>
+<body>
+<div id="app"></div>
+<!-- 加载 docute 的 js 库 -->
+<script src="https://unpkg.com/docute/dist/docute.js"></script>
+<!-- 你也可以把包含 $config 配置的脚本放到单独的文件里 -->
+<!-- 比如 config.js -->
+<script>
+    docute.init({
+        title: 'WTask插件教程',
+        nav: [
+            {title: '首页', path: '/'},
+            {title: '文档', path: window.location.origin + window.location.pathname + 'docs/'}
+        ]
+    })
+</script>
+</body>
+</html>
