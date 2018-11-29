@@ -19,40 +19,37 @@
 <script>
     new Docute({
         target: '#docute',
-        title: "帮助文档",
+        title: "CQBot-swoole 帮助文档",
         sidebar: [
             {
                 links: [
                     {
-                        link: "/"
+                        link: '/'
                     }
                 ]
             }
         ],
         nav: [
             {
-                title: "Hello",
+                title: "首页",
                 link: "/"
             },
             {
-                title: "Hello apply",
-                link: "/docs/apply"
+                title: "快速开始",
+                link: "/docs/quick-start"
             },
             {
-                title: "Hello",
-                link: "/"
-            },
-            {
-                title: "Hello",
-                link: "/"
-            },
-            {
-                title: "Hello",
-                link: "/"
-            },
+                title: "模块",
+                link: "/docs/modules"
+            }
         ],
-        routerMode: 'History',
-        tocVisibleDepth: 2
+        //routerMode: 'History',
+        tocVisibleDepth: 2,
+        highlight: [
+            "php",
+            "bash",
+            "js"
+        ]
     })
 </script>
 </body>
