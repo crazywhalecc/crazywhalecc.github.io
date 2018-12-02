@@ -1,10 +1,13 @@
 # CQBot-swoole 开发文档
 <br>
 
+[CQBot-swoole](https://github.com/crazywhalecc/CQBot-swoole)是一个异步、高性能、多账号的CQ-HTTP-API插件框架。
+
+
 ## 简介
 CQBot-swoole虽然是用PHP写的，但因为使用了Swoole扩展，故使用方式和传统的PHP有很多不同。
 
-因为本项目是基于CoolQ HTTP API插件而开发的SDK，所以一些API、以及插件的配置文件和事件上报格式需要通过插件提供的官方文档进行查阅，本文档不作重复。
+因为本项目是基于[CoolQ HTTP API插件](https://cqhttp.cc/)而开发的SDK，所以一些API、以及插件的配置文件和事件上报格式需要通过插件提供的官方文档进行查阅，本文档不作重复。
 
 文档内涵盖了整个框架的结构、模块结构以及其他特性的介绍。如果你已经安装好了本项目，并且已经成功地在群内提示了机器人已连接，那么说明你的框架部署成功，可以开始开发了。
 
