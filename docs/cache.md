@@ -64,3 +64,47 @@ Cache::removeKey("list", "name");
 Cache::removeValue("a", 2);
 // Cache =====> "a": [1,3]
 ```
+
+## 其他特殊缓存
+
+其他特殊缓存是用于框架内的一些关键变量，请谨慎修改和使用。
+
+### Cache::$worker_id
+
+此变量储存了当前worker进程的id。
+
+### Cache::$data
+
+此变量中就是Cache上面提到储存的数据的变量。
+
+### Cache::$server
+
+保存的是```swoole_websocket_server```对象，可以在模块任意位置调用进行操作。
+
+### Cache::$scheduler
+
+储存计时器管理器对象的变量。
+
+### Cache::$in_count
+
+储存消息接收条数的计数器。
+
+> 对应```swoole_atomic```的swoole原子计数器，可跨进程读写，这是个对象，操作方式详情请看[Swoole的官方文档](https://wiki.swoole.com/wiki/page/p-atomic.html)。
+
+### Cache::$out_count
+
+储存消息发出条数的计数器。
+
+> 对应```swoole_atomic```的swoole原子计数器。
+
+### Cache::$reload_time
+
+储存框架重启次数的计数器。
+
+> 对应```swoole_atomic```的swoole原子计数器。
+
+### Cache::$api_id
+
+框架内部处理每条API请求的id的计数器。
+
+> 对应```swoole_atomic```的swoole原子计数器。

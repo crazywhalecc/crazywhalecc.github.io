@@ -1,6 +1,6 @@
 # 模块
 
-CQBot-swoole 框架采用了模块系统，前面的[快速开始](/docs/quick-start)已经简单写了模块的用法，本章将对模块的细节进行介绍。
+CQBot-swoole 框架采用了模块系统，前面的[快速开始](/docs/quick-start.md)已经简单写了模块的用法，本章将对模块的细节进行介绍。
 
 > 以下所有提到的内容均写到```你的模块.php```的class里面
 
@@ -8,7 +8,6 @@ CQBot-swoole 框架采用了模块系统，前面的[快速开始](/docs/quick-s
 
 模块需要基于```ModBase```类进行构建，构建函数需要对父类构建函数传递参数。
 ```php
-<?php
 class YourMod extends ModBase{
     public function __construct(CQBot $main, $data){
         parent::__construct($main, $data);
@@ -27,8 +26,7 @@ class YourMod extends ModBase{
 
 使用execute函数也很简单，不需要你去在构造函数调用execute，只需在构造函数中加入```$this->split_execute=true;```即可。
 
-```php {highlight:['4-6']}
-<?php
+```php {highlight:['3-5']}
 function execute($it){
     switch($it[0]){
         case "随机数":
@@ -43,7 +41,6 @@ function execute($it){
 
 Notice事件处理只需加一个名字为```onNotice($req)```的静态方法即可。```$req```的数据结构就是HTTPAPI插件上报的Notice事件数据结构
 ```php
-<?php
 static function onNotice($req){
     $notice_type = $req["notice_type"];
     //这里编写你的Notice事件处理代码
@@ -54,7 +51,6 @@ static function onNotice($req){
 
 Request事件处理只需加一个名字为```onRequest($req)```的静态方法即可。```$req```的数据结构就是HTTPAPI插件上报的Request事件数据结构
 ```php
-<?php
 static function onRequest($req){
     $request_type = $req["request_type"];
     //这里编写你的Request事件处理代码，例如好友添加请求
@@ -68,7 +64,6 @@ static function onRequest($req){
 下面的例子我们假设我们使用默认的tick interval（间隔为1s）。每15分钟保存一次Cache中的缓存数据。
 
 ```php
-<?php
 static function onTick($tick){
     if($tick % 900 == 0){
         CQUtil::saveAllFiles();
