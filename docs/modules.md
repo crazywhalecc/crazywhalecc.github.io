@@ -89,8 +89,8 @@ static function initValues(){
 
 在模块中写了初始化函数```saveValues()```并设置了上面提到的计时器后，就可以实现隔一段时间执行saveValues方法进行储存。
 
-> 单个模块中尽量去保存这个模块需要储存的文件，不要去串模块进行保存。
-> 因为模块的意义就是为了区分功能，使各类功能在模块中更独立。
+> 单个模块中尽量去保存这个模块需要储存的文件，不要去串模块进行保存。因为模块的意义就是为了区分功能，使各类功能在模块中更独立。
+
 ```php
 static function saveValues(){
     file_put_contents(CONFIG_DIR."hello.txt", Cache::get("hello_msg"));
