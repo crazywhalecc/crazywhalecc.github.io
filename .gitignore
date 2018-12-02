@@ -1,1 +1,6 @@
-.idea/
+.idea
+out
+gen
+config/
+cq_data/
+composer.lock
