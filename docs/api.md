@@ -59,4 +59,29 @@ CQAPI::send_group_msg(12345, ["group_id" => 100000, "message" => "test"], [$your
 
 ## 模块中reply使用回调函数
 
-TODO
+在模块中，可以使用```$this->reply()```快速回复消息，你也可以在reply时候增加响应包的回调函数。
+
+```php
+$this->reply("优雅的回调", function ($response, $origin){
+    echo $response["status"]."\n";
+});
+```
+
+## CQ码
+
+框架提供了CQ码的封装，你可以在任何位置使用封装好的CQ类的方法。
+
+```php
+$this->reply(CQ::image("a.jpg"));
+//执行后CQ::image被替换为字符串："[CQ:image,file=a.jpg]"
+```
+
+返回CQ码，支持HTTP-API插件提供的[增强特性](https://cqhttp.cc/docs/4.6/#/CQCode?id=%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD%E5%88%97%E8%A1%A8)。下面是以图片为例子。
+
+```php
+//$file 为图片文件名，支持增强特性
+//$cache 为是否缓存，默认为否
+CQ::image($file, $cache = false);
+```
+
+其中函数名和CQ码类型名相同，例如语音为```record```，qq表情为```face```等。
