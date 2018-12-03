@@ -69,7 +69,7 @@ $this->reply("优雅的回调", function ($response, $origin){
 
 ## 延迟发送API
 
-在上方CQAPI类中，支持各类HTTP-API插件提供的接口（包含`_async`结尾的），对应名字相同。框架对API增强了特性，支持延迟发送API。详情见[计时器](/docs/scheduler)。
+在上方CQAPI类中，支持各类HTTP-API插件提供的接口，对应名字相同。框架对API增强了特性，支持延迟发送API。详情见[计时器](/docs/scheduler)。
 
 ## CQ码
 
